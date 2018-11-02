@@ -1,0 +1,23 @@
+{
+  "name": "qwirklevue",
+  "version": "1.0.0",
+  "description": "Vue version of QwirkleUI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conterio/QwirkleVue.git"
+  },
+  "keywords": [
+    "Qwirkle",
+    "Vue"
+  ],
+  "author": "tellingson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/conterio/QwirkleVue/issues"
+  },
+  "homepage": "https://github.com/conterio/QwirkleVue#readme"
+}
