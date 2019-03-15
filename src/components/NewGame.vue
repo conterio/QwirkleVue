@@ -1,35 +1,16 @@
 <template>
   <div style="width: 500px; height:500px;">
-      <button v-on:click="show = !show">
-    Toggle
-  </button>
-  <transition name="fade" 	
-      v-on:before-enter="beforeEnter"
-			v-on:enter="enter"
-		
-			v-on:before-leave="beforeLeave"
-			v-on:leave="leave">
-    <p v-if="show">hello</p>
-  </transition>
-		<transition
-			mode="out-in"
-			v-on:before-enter="beforeEnter"
-			v-on:enter="enter"
-		
-			v-on:before-leave="beforeLeave"
-			v-on:leave="leave"
-			:css="false">
-		<p>Testing</p>
-		</transition>
-	</div>
+    <button v-on:click="show = !show">
+      Toggle
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      show: false,
-      num: 1
+      gridSize: 16
     };
   },
   methods: {
@@ -52,6 +33,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <style scoped>

@@ -1,23 +1,15 @@
 <template>
-<div>
-  <div v-for="color in colors" :key="color">
-    <div class="qwirkle-piece" v-for="shape in shapes" :key="shape" style="margin-right:5px;">
-        <div v-bind:class="[color, shape]"></div>
-    </div>
-  </div>
-  
-</div>
+ <div class="qwirkle-piece"><div :class="[shape, color]"></div></div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      shapes: [ 'circle', 'star-six', 'clover', 'diamond', 'ninja-star', 'square' ],
-      colors: [ 'blue', 'yellow', 'orange', 'purple', 'green', 'red' ]
-    };
+  name: 'QwirklePiece',
+  props: {
+    shape: String,
+    color: String
   }
-};
+}
 </script>
 
 <style scoped>
@@ -26,42 +18,42 @@ export default {
   width: 5em;
   height: 5em;
   padding: 1em;
-	-moz-box-shadow:inset 0px 0px 7px 0px #8c8e8f;
-	-webkit-box-shadow:inset 0px 0px 7px 0px #8c8e8f;
-	box-shadow:inset 0px 0px 7px 0px #8c8e8f;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #000000));
-	background:-moz-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-webkit-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-o-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-ms-linear-gradient(top, #000000 5%, #000000 100%);
-	background:linear-gradient(to bottom, #000000 5%, #000000 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000',GradientType=0);
-	background-color:#000000;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #0b0e07;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
+  -moz-box-shadow:inset 0px 0px 7px 0px #8c8e8f;
+  -webkit-box-shadow:inset 0px 0px 7px 0px #8c8e8f;
+  box-shadow:inset 0px 0px 7px 0px #8c8e8f;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #000000));
+  background:-moz-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-webkit-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-o-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-ms-linear-gradient(top, #000000 5%, #000000 100%);
+  background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000',GradientType=0);
+  background-color:#000000;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #0b0e07;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #263666;
 }
 .qwirkle-piece:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #000000));
-	background:-moz-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-webkit-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-o-linear-gradient(top, #000000 5%, #000000 100%);
-	background:-ms-linear-gradient(top, #000000 5%, #000000 100%);
-	background:linear-gradient(to bottom, #000000 5%, #000000 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000',GradientType=0);
-	background-color:#000000;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #000000));
+  background:-moz-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-webkit-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-o-linear-gradient(top, #000000 5%, #000000 100%);
+  background:-ms-linear-gradient(top, #000000 5%, #000000 100%);
+  background:linear-gradient(to bottom, #000000 5%, #000000 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000',GradientType=0);
+  background-color:#000000;
 }
 .qwirkle-piece:active {
-	position:relative;
-	top:1px;
+  position:relative;
+  top:1px;
 }
 
 .circle {
@@ -101,36 +93,36 @@ export default {
   position: relative; 
   left: 1em;
   width: 1em; 
-	border-radius: 5px;
+  border-radius: 5px;
 }
 
 .clover:after {
-	background: red; 
+  background: red; 
   content: ""; 
   height: 1em; 
   left: -1em; 
   position: absolute; 
   top: 1em; 
   width: 3em; 
-	border-radius: 5px;
+  border-radius: 5px;
 }
 .clover.blue, .clover.blue:after {
-	background: blue;
+  background: blue;
 }
 .clover.yellow, .clover.yellow:after {
-	background: yellow;
+  background: yellow;
 }
 .clover.orange, .clover.orange:after {
-	background: orange;
+  background: orange;
 }
 .clover.purple, .clover.purple:after {
-	background: purple;
+  background: purple;
 }
 .clover.green, .clover.green:after {
-	background: green;
+  background: green;
 }
 .clover.red, .clover.red:after {
-	background: red;
+  background: red;
 }
 
 .diamond {
@@ -190,7 +182,7 @@ body {
 
 .blue {
   border-color: blue;
-	color:blue;
+  color:blue;
 }
 .blue:after {
   border-top-color:blue;
@@ -201,12 +193,12 @@ body {
 }
 .yellow:after {
   border-top-color:yellow;
-	color:yellow;
+  color:yellow;
 }
 
 .orange {
   border-color:orange;
-	color:orange;
+  color:orange;
 }
 .orange:after {
   border-top-color:orange;
@@ -214,7 +206,7 @@ body {
 
 .purple {
   border-color:purple;
-	color:purple;
+  color:purple;
 }
 .purple:after {
   border-top-color:purple;
@@ -222,7 +214,7 @@ body {
 
 .green {
   border-color:green;
-	color:green;
+  color:green;
 }
 .green:after {
   border-top-color:green;
@@ -230,7 +222,7 @@ body {
 
 .red {
   border-color:red;
-	color:red;
+  color:red;
 }
 .red:after {
   border-top-color:red;
