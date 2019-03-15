@@ -24,9 +24,6 @@ export default {
 </script>
 
 <style scoped>
-.clear {
-  clear:both;
-}
 .container {
   display: flex;
   align-items: center;
